@@ -1,5 +1,7 @@
 package com.bridgelabz.algorithm;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -45,15 +47,23 @@ public class Message {
 			addPhoneNumber();
 		}
 	}
-
+public String date() {
+	LocalDateTime date = LocalDateTime.now();    
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
+    
+    String formattedDate = date.format(dateFormat);  
+    return formattedDate;
+}
+	
 	public void display() {
 
-		Date date = new Date();
+		 
+		
 		UserData user = UserData.getInstance();
-		System.out.println("Hello " + user.getLastName() + ", We have your full\n" + user.getFirstName()
+		System.out.println("Hello " + user.getLastName() + ", We have your full name " + user.getFirstName()+" "
 				+ user.getLastName() + " in our system. your contact number is " + user.getPhoneNumber() + ".\n"
-				+ "Please,let us know in case of any clarification Thank you BridgeLabz\nDate  : " + date + ".");
-
+				+ "Please,let us know in case of any clarification Thank you BridgeLabz.\tDate  : "+date());
+		
 	}
 
 }
