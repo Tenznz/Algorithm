@@ -28,8 +28,8 @@ public class Message {
 		System.out.print("Enter Last Name : ");
 		String lName = sc.next();
 		user.setLastName(lName);
-		
-		addPhoneNumber();//adding valid phone number
+
+		addPhoneNumber();// adding valid phone number
 
 	}
 
@@ -47,23 +47,21 @@ public class Message {
 			addPhoneNumber();
 		}
 	}
-public String date() {
-	LocalDateTime date = LocalDateTime.now();    
-    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
-    
-    String formattedDate = date.format(dateFormat);  
-    return formattedDate;
-}
-	
+
+	public String date() {
+		LocalDateTime date = LocalDateTime.now();
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		String formattedDate = date.format(dateFormat);
+		return formattedDate;
+	}
+
 	public void display() {
 
-		 
-		
 		UserData user = UserData.getInstance();
-		System.out.println("Hello " + user.getLastName() + ", We have your full name " + user.getFirstName()+" "
+		System.out.println("Hello " + user.getLastName() + ", We have your full name " + user.getFirstName() + " "
 				+ user.getLastName() + " in our system. your contact number is " + user.getPhoneNumber() + ".\n"
-				+ "Please,let us know in case of any clarification Thank you BridgeLabz.\tDate  : "+date());
-		
+				+ "Please,let us know in case of any clarification Thank you BridgeLabz.\tDate  : " + date());
 	}
 
 }

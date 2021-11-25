@@ -47,6 +47,4 @@ public class UserData {
 		return "UserData [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + "]";
 	}
 
-	
-	
 }
